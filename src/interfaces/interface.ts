@@ -1,4 +1,4 @@
-export interface userinfo {
+export interface userinfoInterface {
     user_id: number,
     user_name: string,
     user_password: string,
@@ -6,7 +6,7 @@ export interface userinfo {
     user_status: number,
 }
 
-export const userinfo = {
+export const userinfoObjProps = {
     user_id: 0,
     user_name: "",
     user_password: "",

@@ -1,5 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { userinfoObjProps } from './interfaces/interface';
 import './App.css'
 
 /**
@@ -10,9 +11,8 @@ import './App.css'
  * @returns {ReactComponentElement}
  */
 function App() {
-  const [userInfo, setUserInfo] = useState({
-
-  })
+  const [userInfo, setUserInfo] = useState({userinfoObjProps});
+  const nav = useNavigate();
   return (
     <div>
       <Router>

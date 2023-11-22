@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { userinfoObjProps } from './interfaces/interface';
 import './App.css'
+import { AuthProvider } from './components/Auth';
+import FoF from './pages/FoF';
 
 /**
  * App()
@@ -11,11 +13,11 @@ import './App.css'
  * @returns {ReactComponentElement}
  */
 function App() {
-  const [userInfo, setUserInfo] = useState({userinfoObjProps});
-  const nav = useNavigate();
+  
   return (
     <div>
       <Router>
+        <AuthProvider>
         <NavBar />
         <main>
           <Routes>
@@ -24,9 +26,10 @@ function App() {
             <Route path="/posts/new" element={<New />} />
             <Route path="/posts/:id" element={<Show />} />
             <Route path="/posts/:id/edit" element={<Edit />} />
-            <Route path="*" element={<FourOFour />} />
+            <Route path="*" element={<FoF />} />
           </Routes>
         </main>
+        </AuthProvider>
       </Router>
       <Footer />
     </div>

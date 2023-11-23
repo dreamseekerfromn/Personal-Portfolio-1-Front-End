@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { postNewUser } from '../api/fetch';
+import { postNewUser } from '../api/axios';
 import { userinfoObjProps } from '../interfaces/interface';
 
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { userinfoObjProps } from "../interfaces/interface";
-import { postAuth } from "../api/fetch";
+import { postAuth } from "../api/axios";
 import { useAuth } from "./Auth";
 
 /**

@@ -47,7 +47,7 @@ export default function NewUserForm(){
                     <input type="text" id="user_password2" name="user_password2" placeholder="Password" maxLength={40} onChange={handleConfirmPwChange} required />
                 </label>
             </div>
-            <input type="submit">Submit</input>
+            <input type="submit"/>
         </form>
     );
 }

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { userinfoObjProps } from "../interfaces/interface";
 import { postAuth } from "../api/fetch";
@@ -25,7 +25,7 @@ export default function LoginForm(){
             })
             .catch((err) => console.error(err));
     };
-    
+
     return(
         <form onSubmit={handleSubmit}>
             <div className="grid">
@@ -38,7 +38,7 @@ export default function LoginForm(){
                     <input type="text" id="user_password" name="user_password" placeholder="Password" maxLength={40} onChange={handleTextChange} required />
                 </label>
             </div>
-            <input type="submit">Submit</input>
+            <input type="submit" />
         </form>
     )
 }

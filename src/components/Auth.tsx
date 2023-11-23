@@ -13,6 +13,7 @@ type authContextProp = {
     setUserEmail: (newState: string) => void,
     setUserName: (newState:string) => void,
     setUserID: (newState:number) => void,
+    loginUser: (input:userinfoInterface) => void,
 };
 
 const authContextInitial = {
@@ -24,6 +25,7 @@ const authContextInitial = {
     setUserEmail: () => {},
     setUserName:()=>{},
     setUserID:()=>{},
+    loginUser: () => {}
 }
 
 export const AuthContext = createContext<authContextProp>(authContextInitial);
@@ -36,7 +38,7 @@ export const AuthProvider = (props:React.PropsWithChildren) => {
 
     const loginUser = (input:userinfoInterface) => {
         console.log(input);
-        const responseJson = postAuth(input)
+        postAuth(input)
             .then((res) => {
                 console.log(res);
                 return res;
@@ -47,7 +49,7 @@ export const AuthProvider = (props:React.PropsWithChildren) => {
     }
 
     return(
-        <AuthContext.Provider value={{authenticated, setAuthenticated, user_email, setUserEmail, user_name, setUserName, setUserID, user_id}}>
+        <AuthContext.Provider value={{authenticated, setAuthenticated, user_email, setUserEmail, user_name, setUserName, setUserID, user_id, loginUser}}>
             <div>{props.children}</div>
         </AuthContext.Provider>
     );

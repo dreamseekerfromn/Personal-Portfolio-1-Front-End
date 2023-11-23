@@ -1,15 +1,22 @@
 import { useNavigate } from "react-router-dom";
-import { userinfoInterface } from "../interfaces/interface";
 import { useEffect } from "react";
+import { useAuth } from "../components/Auth";
 
-export default function Home({userInfo}:{userInfo:userinfoInterface}){
+export default function Home(){
     const nav = useNavigate();
-
+    const auth = useAuth();
     useEffect(() => {
-        if(!userInfo["user_name"]){
+        if(!auth.authenticated){
             nav("/login");
+        }
+        else{
+            console.log("Entered to the dashboard");
         }
     },[]);
 
-    
+    return(
+        <div>
+            <h1>Welcome</h1>
+        </div>
+    )
 }

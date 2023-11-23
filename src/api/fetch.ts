@@ -3,6 +3,7 @@ import axios from "axios";
 const serverURL = import.meta.env.VITE_BASE_URL;
 
 export async function postAuth(body:userinfoInterface){
+    console.log(body)
     return await axios.post(`${serverURL}/user/login`, body);
 }
 

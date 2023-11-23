@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { userinfoObjProps } from "../interfaces/interface";
 import { postAuth } from "../api/fetch";
+import { useAuth } from "./Auth";
 
 /**
  * LoginForm()
@@ -11,7 +12,7 @@ import { postAuth } from "../api/fetch";
 export default function LoginForm(){
     const nav = useNavigate();
     const [userInfo, setUserInfo] = useState(userinfoObjProps);
-    
+    const auth = useAuth();
     const handleTextChange = (event:React.ChangeEvent<HTMLInputElement>) => {
         setUserInfo({ ...userInfo, [event.target.id]: event.target.value });
     };
@@ -19,9 +20,11 @@ export default function LoginForm(){
     const handleSubmit = (event:React.ChangeEvent<HTMLFormElement>) => {
         event.preventDefault();
         postAuth(userInfo)
-            .then(() => {
+            .then((json) => {
             console.log("create success!");
-            nav("/posts");
+            console.log(json)
+            auth.setAuthenticated(true);
+            nav("/home");
             })
             .catch((err) => console.error(err));
     };

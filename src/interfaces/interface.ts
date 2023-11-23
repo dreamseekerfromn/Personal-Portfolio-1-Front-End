@@ -1,5 +1,6 @@
 export interface userinfoInterface {
     user_id: number,
+    user_email: string,
     user_name: string,
     user_password: string,
     manager: boolean,
@@ -8,6 +9,7 @@ export interface userinfoInterface {
 
 export const userinfoObjProps = {
     user_id: 0,
+    user_email: "",
     user_name: "",
     user_password: "",
     manager: false,

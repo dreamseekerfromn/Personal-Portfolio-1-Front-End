@@ -1,9 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { userinfoObjProps } from './interfaces/interface';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
 import { AuthProvider } from './components/Auth';
 import FoF from './pages/FoF';
+import Login from './pages/Login';
+import Signin from './pages/Signin';
 
 /**
  * App()
@@ -18,20 +18,15 @@ function App() {
     <div>
       <Router>
         <AuthProvider>
-        <NavBar />
         <main>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/posts" element={<Posts />} />
-            <Route path="/posts/new" element={<New />} />
-            <Route path="/posts/:id" element={<Show />} />
-            <Route path="/posts/:id/edit" element={<Edit />} />
+            <Route path="/" element={<Login />} />
+            <Route path='/signin' element={<Signin />} />
             <Route path="*" element={<FoF />} />
           </Routes>
         </main>
         </AuthProvider>
       </Router>
-      <Footer />
     </div>
   )
 }

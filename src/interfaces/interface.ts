@@ -15,3 +15,13 @@ export const userinfoObjProps = {
     manager: false,
     user_status: 0,
 }
+
+export interface roomListInterface {
+    room_id: number,
+    room_name: string,
+}
+
+export const roomListObjProps = {
+    room_id: 0,
+    room_name: "",
+}

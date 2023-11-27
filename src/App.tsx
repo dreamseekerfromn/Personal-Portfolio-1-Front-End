@@ -4,7 +4,8 @@ import { AuthProvider } from './components/Auth';
 import FoF from './pages/FoF';
 import Login from './pages/Login';
 import Signin from './pages/Signin';
-import Home from './pages/Home';
+import Lobby from './pages/Lobby';
+import ChatPage from './pages/ChatPage';
 
 /**
  * App()
@@ -23,7 +24,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path='/signin' element={<Signin />} />
-            <Route path='/home' element={<Home />} />
+            <Route path='/lobby' element={<Lobby />} />
+            <Route path='/chat/:id' element={<ChatPage />}/>
             <Route path="*" element={<FoF />} />
           </Routes>
         </main>

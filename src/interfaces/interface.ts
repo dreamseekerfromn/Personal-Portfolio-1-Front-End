@@ -25,3 +25,13 @@ export const roomListObjProps = {
     room_id: 0,
     room_name: "",
 }
+
+export interface IMessage {
+    user_name: string | undefined;
+    message: string | undefined;
+}
+
+export const IMessageInitProps = {
+    user_name: "",
+    message: "",
+}

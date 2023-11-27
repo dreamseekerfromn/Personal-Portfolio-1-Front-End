@@ -33,6 +33,11 @@ const authContextInitial = {
 
 export const AuthContext = createContext<authContextProp>(authContextInitial);
 
+/**
+ * 
+ * @param props {React.PropsWithChildren} - 
+ * @returns {ReactComponentElement}
+ */
 export const AuthProvider = (props:React.PropsWithChildren) => {
     const nav = useNavigate();
     const [authenticated, setAuthenticated] = useState(authContextInitial.authenticated);

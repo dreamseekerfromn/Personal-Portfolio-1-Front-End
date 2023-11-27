@@ -24,10 +24,14 @@ export default function LoginForm(){
             console.log("create success!");
             console.log(json)
             auth.setAuthenticated(true);
-            nav("/home");
+            nav("/lobby");
             })
             .catch((err) => console.error(err));
     };
+
+    const handleCreateAccount = () => {
+        nav("/signin");
+    }
 
     return(
         <form onSubmit={handleSubmit}>
@@ -41,7 +45,8 @@ export default function LoginForm(){
                     <input type="text" id="user_password" name="user_password" placeholder="Password" maxLength={40} onChange={handleTextChange} required />
                 </label>
             </div>
-            <input type="submit" />
+            <button type="submit">Log in</button>
+            <button onClick={handleCreateAccount}>Create Account</button>
         </form>
     )
 }

@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { postNewUser } from '../api/axios';
 import { userinfoObjProps } from '../interfaces/interface';
 
-
 export default function NewUserForm(){
     const nav = useNavigate();
     const [userInfo, setUserInfo] = useState(userinfoObjProps);
@@ -20,8 +19,8 @@ export default function NewUserForm(){
         if(confirmPw === userInfo.user_password){
             postNewUser(userInfo)
                 .then(() => {
-                console.log("create success!");
-                nav("/");
+                    console.log("create success!");
+                    nav("/");
                 })
                 .catch((err) => console.error(err));
         }
@@ -47,7 +46,7 @@ export default function NewUserForm(){
                     <input type="text" id="user_password2" name="user_password2" placeholder="Password" maxLength={40} onChange={handleConfirmPwChange} required />
                 </label>
             </div>
-            <input type="submit"/>
+            <input type="submit" />
         </form>
     );
 }

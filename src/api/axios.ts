@@ -8,13 +8,23 @@ export async function postAuth(body:userinfoInterface){
 }
 
 export async function postNewUser(body:userinfoInterface){
-    return await axios.post(`${serverURL}/user`, body);
+    return await axios.post(`${serverURL}/user`, body, {headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }});
 }
 
 export async function postNewRoom(body:roomListInterface){
-    return await axios.post(`${serverURL}/rooms`, body);
+    return await axios.post(`${serverURL}/rooms`, body, {headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }});
 }
 
 export async function getRooms(){
     return await axios.get(`${serverURL}/rooms`);
+}
+
+export async function getOneRoom(id:string){
+    return await axios.get(`${serverURL}/rooms/${id}`);
 }

@@ -10,7 +10,7 @@ import axios from "axios";
  */
 export default function ChatForm({sendMessage, setSendMessage}:{sendMessage:string, setSendMessage: any}){
     const auth = useAuth();
-    
+    const URL = import.meta.env.VITE_BASE_URL2;
     const handleTextChange = useCallback((event:React.ChangeEvent<HTMLTextAreaElement>) => {
             setSendMessage(event.target.value );
         },
@@ -23,7 +23,7 @@ export default function ChatForm({sendMessage, setSendMessage}:{sendMessage:stri
                 user_name : auth.user_name,
                 message: sendMessage,
             }
-            await axios.post("/chat", message);
+            await axios.post(`${URL}/chat`, message);
             setSendMessage("");
         };
     };

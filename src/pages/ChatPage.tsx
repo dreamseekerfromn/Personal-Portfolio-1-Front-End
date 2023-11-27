@@ -7,11 +7,13 @@ import ChatForm from "../components/ChatForm";
 import { IMessageInitProps } from "../interfaces/interface";
 
 //import { useAuth } from "../components/Auth";
-const URL = import.meta.env.VITE_BASE_URL2;
+const URL = import.meta.env.VITE_BASE_URL;
 
 export default function ChatPage(){
     //const nav = useNavigate();
-    const socket = io(URL, {path: "/chat"});
+    const socket = io(URL, {path: "/chat", autoConnect: false});
+    socket.connect();
+    console.log(socket);
     const { id } = useParams();
     const [roomName, setRoomName] = useState("");
     const auth = useAuth();
@@ -19,10 +21,8 @@ export default function ChatPage(){
     const [ chat, setChat ] = useState([IMessageInitProps]);
 
     useEffect(() => {
-        console.log(id);
         getOneRoom(String(id))
         .then((res) => {
-            console.log(res);
             setRoomName(res.data.data.payload.room_name);
             socket.on("connection", (signal) => {
                 console.log(signal);

@@ -21,9 +21,12 @@ export default function LoginForm(){
         event.preventDefault();
         postAuth(userInfo)
             .then((json) => {
-            console.log("create success!");
-            console.log(json)
+            console.log("login success!");
+            //console.log(json.data.data.payload)
             auth.setAuthenticated(true);
+            auth.setUserEmail(json.data.data.payload.user_email);
+            auth.setUserID(json.data.data.payload.user_id);
+            auth.setUserName(json.data.data.payload.user_name);
             nav("/lobby");
             })
             .catch((err) => console.error(err));

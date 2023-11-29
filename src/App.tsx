@@ -6,6 +6,8 @@ import Login from './pages/Login';
 import Signin from './pages/Signin';
 import Lobby from './pages/Lobby';
 import ChatPage from './pages/ChatPage';
+import NavBar from './components/NavBar';
+import Profile from './components/Profile';
 
 /**
  * App()
@@ -20,15 +22,17 @@ function App() {
     <div>
       <Router>
         <AuthProvider>
-        <main>
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path='/signin' element={<Signin />} />
-            <Route path='/lobby' element={<Lobby />} />
-            <Route path='/chat/:id' element={<ChatPage />}/>
-            <Route path="*" element={<FoF />} />
-          </Routes>
-        </main>
+          <NavBar />
+          <main>
+            <Routes>
+              <Route path="/" element={<Login />} />
+              <Route path='/signin' element={<Signin />} />
+              <Route path='/lobby' element={<Lobby />} />
+              <Route path='/profile' element={<Profile />} />
+              <Route path='/chat/:id' element={<ChatPage />}/>
+              <Route path="*" element={<FoF />} />
+            </Routes>
+          </main>
         </AuthProvider>
       </Router>
     </div>

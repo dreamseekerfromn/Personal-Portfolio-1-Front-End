@@ -16,7 +16,7 @@ export default function RoomList(){
         }
         getRooms()
             .then((res) => {
-                console.log(res.data.data)
+                //console.log(res.data.data)
                 setRooms([...res.data.data.payload]);
             }).catch((err) => { console.log(err)})
     }),[];

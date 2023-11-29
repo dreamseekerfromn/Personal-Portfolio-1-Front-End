@@ -21,10 +21,25 @@ export async function postNewRoom(body:roomListInterface){
       }});
 }
 
+export async function putExistingUser(id:string, body:userinfoInterface){
+    return await axios.put(`${serverURL}/user/${id}`, body, {headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+    }})
+}
+
+export async function getUser(id:string){
+    return await axios.get(`${serverURL}/user/${id}`);
+}
+
 export async function getRooms(){
     return await axios.get(`${serverURL}/rooms`);
 }
 
 export async function getOneRoom(id:string){
     return await axios.get(`${serverURL}/rooms/${id}`);
+}
+
+export async function deleteAccount(id:string){
+    return await axios.delete(`${serverURL}/user/${id}`);
 }

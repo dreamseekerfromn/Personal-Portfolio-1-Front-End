@@ -41,7 +41,7 @@
 }
 
 .bgLight {
-    background: #f3f3f3;
+    background: #b71818;
 }
 
 .pl-10 {
@@ -57,11 +57,12 @@
 }
 
 .colorWhite {
-    color: #ffffff;
+    color: #20ff40;
 }
 
 .messages_container {
     padding: 5% 0;
     overflow: auto;
     flex: auto;
+    background: #f3f3f3;
 }

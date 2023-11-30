@@ -1,27 +1,53 @@
-# React + TypeScript + Vite
+# SY's Web Socket Involving Chat App (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SY's Web Socket Involving Chat App is a web application implementing web socket to communicate backend continuously, sending and receiving messages with other users in real time. 
+[Frontend URL]() 
+[Frontend Github](https://github.com/dreamseekerfromn/Personal-Portfolio-1-Front-End)
+[Backend URL](https://personal-portfolio-1-back-end.onrender.com)
+[Backend Github](https://github.com/dreamseekerfromn/Personal-Portfolio-1-Back-End)
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Acknowledgments](#acknowledgments)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This web application uses React for front-end, and React Bootstrap and Bootstrap for styling, and Vite for basic building & compiling.
+Codes are written in typescript.
 
-- Configure the top-level `parserOptions` property like this:
+### Prerequisites
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+Following dependencies required to run this application.
+   vite with typescript,
+   axios v.1.6.2
+   bootstrap v.5.3.2
+   react v.18.2.0
+   react-bootstrap v.2.9.1
+   react-dom v.18.2.0
+   react-router-dom v.6.19.0
+   socket.io v.4.7.2
+   socket.io-client v.4.7.2
+
+### Installation
+
+Run following command to install all the dependencies that are required.
+```
+   npm i
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Usage
+
+You can communicate other users who are joined in same room in real time.
+
+You need to run Vite to check this front-end application in your local machine.
+```
+   npm run dev
+```
+
+## Acknowledgments
+
+This application is still developing, so check later for more update.

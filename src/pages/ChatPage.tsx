@@ -4,23 +4,27 @@ import { getOneRoom } from "../api/axios";
 import { useAuth } from "../components/Auth";
 import ChatForm from "../components/ChatForm";
 import { IMessageInitProps } from "../interfaces/interface";
-import { socket, socketID } from "../api/socket";
+import { socket } from "../api/socket";
 import './ChatPage.css';
-//import { useAuth } from "../components/Auth";
 
+/**
+ * ChatPage()
+ * ============================================
+ * whole page to render chat messages including socket connection.
+ * 
+ * @returns {ReactComponentElement}
+ */
 export default function ChatPage(){
-
     const nav = useNavigate();
     socket.emit('connection', "hello world");
     const { id } = useParams();
-    const [roomName, setRoomName] = useState("");
     const auth = useAuth();
     const {user_name} = auth;
+    const [roomName, setRoomName] = useState("");
     const [ sendMessage, setSendMessage ] = useState("");
     const [ chat, setChat ] = useState([IMessageInitProps]);
 
     socket.on("message", (message) => {
-        console.log("hi")
         setChat([...chat, message]);
     })
 
@@ -43,7 +47,7 @@ export default function ChatPage(){
             
             socket.connect();
             socket.on("connect", () => {
-                console.log(socket.id); // x8WIv7-mJelg7on_ALbx
+                console.log(socket.id);
             });
             socket.emit("join",{user_name, roomName}, (error:any) => { if(error) alert(error)});
             socket.emit('message',`${auth.user_name} has been joined`);
@@ -64,8 +68,9 @@ export default function ChatPage(){
                         <div className={chat.user_name === auth.user_name ? "sentText pr-10" : "messageText pl-10"}>
                             <div className={chat.user_name === auth.user_name ? `messageBox bgBlue` : `messageBox bgLight`}>
                                 <p className={chat.user_name === auth.user_name ? `messageText colorDark` : `messageText colorWhite`}>
-                                    <span>{chat.user_name === auth.user_name ? "Me" : chat.user_name}</span> <span>{chat.message}</span>
+                                    <span>{chat.message}</span>
                                 </p>
+                                <span>{chat.user_name === auth.user_name ? "Me" : chat.user_name}</span>
                             </div>
                         </div>
                     </div>

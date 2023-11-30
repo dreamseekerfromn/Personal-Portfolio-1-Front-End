@@ -5,6 +5,7 @@ import { useAuth } from "../components/Auth";
 import ChatForm from "../components/ChatForm";
 import { IMessageInitProps } from "../interfaces/interface";
 import { socket, socketID } from "../api/socket";
+import './ChatPage.css';
 //import { useAuth } from "../components/Auth";
 
 export default function ChatPage(){
@@ -56,11 +57,20 @@ export default function ChatPage(){
     },[chat]);
 
     return(
-        <>
-            <div>
-                {chat.length ? (chat.map((chat) => (<div><span>{chat.user_name === auth.user_name ? "Me" : chat.user_name}</span> <span>{chat.message}</span></div>))) : (<div>No Message</div>)}
-            </div>
+        <div className="messages_container">
+            {chat.length ? (chat.map((chat) => (
+                <div className= {chat.user_name === auth.user_name ? "messageContainer justifyEnd" : "messageContainer justifyStart"}>
+                    <div className="messageBox">
+                        <div className={chat.user_name === auth.user_name ? "sentText pr-10" : "messageText pl-10"}>
+                            <div className={chat.user_name === auth.user_name ? `messageBox bgBlue` : `messageBox bgLight`}>
+                                <p className={chat.user_name === auth.user_name ? `messageText colorDark` : `messageText colorWhite`}>
+                                    <span>{chat.user_name === auth.user_name ? "Me" : chat.user_name}</span> <span>{chat.message}</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>))) : (<div>No Message</div>)}
             <ChatForm sendMessage={sendMessage} setSendMessage={setSendMessage} socket={socket}/>
-        </>
+        </div>
     )
 }

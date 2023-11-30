@@ -1,7 +1,7 @@
 # SY's Web Socket Involving Chat App (Frontend)
 
 SY's Web Socket Involving Chat App is a web application implementing web socket to communicate backend continuously, sending and receiving messages with other users in real time. 
-[Frontend URL]() 
+[Frontend URL](meek-lolly-48851f.netlify.app) 
 [Frontend Github](https://github.com/dreamseekerfromn/Personal-Portfolio-1-Front-End)
 [Backend URL](https://personal-portfolio-1-back-end.onrender.com)
 [Backend Github](https://github.com/dreamseekerfromn/Personal-Portfolio-1-Back-End)

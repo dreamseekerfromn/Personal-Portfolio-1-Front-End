@@ -45,7 +45,6 @@ export default function ChatForm({sendMessage, setSendMessage, socket}:{sendMess
         <form>
             <div className="grid">
                 <label htmlFor="message">
-                    Message
                     <textarea id="message" name="message" placeholder="Message" maxLength={256} onChange={handleTextChange} required />
                 </label>
             </div>

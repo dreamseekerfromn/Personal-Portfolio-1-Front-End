@@ -2,6 +2,7 @@ import { useState } from "react";
 import { postNewRoom } from "../api/axios";
 import { roomListObjProps } from "../interfaces/interface";
 import { useNavigate } from "react-router-dom";
+import { Button, Form } from "react-bootstrap";
 
 /**
  * NewRoomForm()
@@ -30,14 +31,14 @@ export default function NewRoomForm(){
     };
 
     return(
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="user_email">
-                    Room Name
-                    <input type="text" id="room_name" name="room_name" placeholder="room_name" maxLength={255} onChange={handleTextChange} required />
-                </label>
-                <button type="submit">Create New Room</button>
-            </form>
+        <div className="form-wrapper">
+            <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-3" controlId="room_name">
+                    <Form.Label>Room Name</Form.Label>
+                    <Form.Control id="room_name" name="room_name" placeholder="Room name" onChange={handleTextChange} maxLength={255} required/>
+                </Form.Group>
+                <Button type="submit">Create New Room</Button>
+            </Form>
         </div>
     )
 }

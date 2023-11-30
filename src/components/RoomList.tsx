@@ -5,7 +5,7 @@ import Room from "./Room";
 import NewRoomForm from "./NewRoomForm";
 import { useAuth } from "./Auth";
 import { useNavigate } from "react-router-dom";
-
+import { ListGroup } from "react-bootstrap";
 export default function RoomList(){
     const [rooms, setRooms] = useState([roomListObjProps]);
     const nav = useNavigate();
@@ -24,10 +24,11 @@ export default function RoomList(){
     return(
         <>
             <NewRoomForm />
+            
             <div>
-                <ul>
+                <ListGroup>
                     {rooms.map((elem) => <Room item={elem} />)}
-                </ul>
+                </ListGroup>
             </div>  
         </>
     )

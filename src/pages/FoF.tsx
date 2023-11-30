@@ -1,3 +1,5 @@
+import { Alert } from "react-bootstrap";
+
 /**
  * FoF()
  * ====================================
@@ -7,8 +9,8 @@
  */
 export default function FoF() {
     return (
-      <div>
+      <Alert variant="danger">
         <h1>Sorry, no page found</h1>
-      </div>
+      </Alert>
     );
 }

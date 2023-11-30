@@ -57,3 +57,5 @@ You need to run Vite to check this front-end application in your local machine.
 ## Acknowledgments
 
 This application is still developing, so check later for more update.
+
+currently user part has only fully supported CRUD.

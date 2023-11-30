@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { postNewUser } from '../api/axios';
 import { userinfoObjProps } from '../interfaces/interface';
+import { Form, Button } from 'react-bootstrap';
 
 export default function NewUserForm(){
     const nav = useNavigate();
@@ -27,26 +28,26 @@ export default function NewUserForm(){
     };
 
     return(
-        <form onSubmit={handleSubmit}>
-            <div className="grid">
-                <label htmlFor="user_email">
-                    E-Mail
-                    <input type="email" id="user_email" name="user_name" placeholder="username" maxLength={40} onChange={handleTextChange} required />
-                </label>
-                <label htmlFor="user_email">
-                    Username
-                    <input type="text" id="user_name" name="user_name" placeholder="username" maxLength={40} onChange={handleTextChange} required />
-                </label>
-                <label htmlFor="user_password">
-                    Password
-                    <input type="text" id="user_password" name="user_password" placeholder="Password" maxLength={40} onChange={handleTextChange} required />
-                </label>
-                <label htmlFor="user_password">
-                    Confirm Password
-                    <input type="text" id="user_password2" name="user_password2" placeholder="Password" maxLength={40} onChange={handleConfirmPwChange} required />
-                </label>
-            </div>
-            <input type="submit" />
-        </form>
+        <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-3" >
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control id="user_email" value={userInfo.user_email} type="email" placeholder="Enter email" onChange={handleTextChange} maxLength={40} required/>
+                </Form.Group>
+                <Form.Group className="mb-3" >
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control id="user_name" placeholder="Username" value={userInfo.user_name} onChange={handleTextChange} maxLength={40} required/>
+                </Form.Group>
+                <Form.Group className="mb-3" >
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control className="text-muted" id="user_password" type="password" placeholder="Password" value={userInfo.user_password} onChange={handleTextChange} required/>
+                </Form.Group>
+                <Form.Group className="mb-3" >
+                    <Form.Label>Confirm Password</Form.Label>
+                    <Form.Control className="text-muted" id="user_password2" type="password" placeholder="Password" value={userInfo.user_password} onChange={handleConfirmPwChange} required/>
+                </Form.Group>
+            <Button variant="primary" type="submit" >
+                Create New Account
+            </Button>
+        </Form>
     );
 }

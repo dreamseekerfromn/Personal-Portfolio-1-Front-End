@@ -40,12 +40,15 @@ main {
   place-content: center;
   place-items: center;
   display: flex;
+  border-radius: 25px;
+  scroll-behavior: smooth;
 }
 
 .list-wrapper {
   display: inline;
   justify-items: center;
   padding-right: 10px;
+
 }
 
 a {

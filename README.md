@@ -16,6 +16,8 @@ SY's Web Socket Involving Chat App is a web application implementing web socket 
 
 ## Getting Started
 
+[Diagram](https://drive.google.com/file/d/19J7xcQ0nP770N3GWyO_PXEWb8zd6b1DT/view?usp=sharing)
+
 This web application uses React for front-end, and React Bootstrap and Bootstrap for styling, and Vite for basic building & compiling.
 Codes are written in typescript.
 

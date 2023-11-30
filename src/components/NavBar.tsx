@@ -27,8 +27,14 @@ export default function NavBar(){
                     <Navbar.Brand>SY's chat</Navbar.Brand>
                 </Link>
                 {auth.authenticated ? 
-                (<><Button type="button" onClick={handleLougout}>Logout</Button>
-                <Button type="button" onClick={handleMyProfile}>Profile</Button></>) 
+                (<>
+                    <Button type="button" onClick={handleMyProfile}>
+                        Profile
+                    </Button>
+                    <Button type="button" onClick={handleLougout}>
+                        Logout
+                    </Button>
+                    </>) 
                 : null
                 }
             </Container>

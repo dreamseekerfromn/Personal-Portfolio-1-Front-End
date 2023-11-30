@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { userinfoObjProps } from "../interfaces/interface";
 import { postAuth } from "../api/axios";
 import { useAuth } from "./Auth";
+import { FormControl, FormLabel, Form, Button } from "react-bootstrap";
 
 /**
  * LoginForm()
@@ -37,19 +38,21 @@ export default function LoginForm(){
     }
 
     return(
-        <form onSubmit={handleSubmit}>
-            <div className="grid">
-                <label htmlFor="user_email">
+        <div className="wrapper">
+            <Form onSubmit={handleSubmit}>
+                <FormLabel>
                     E-Mail
-                    <input type="email" id="user_email" name="user_name" placeholder="username" maxLength={40} onChange={handleTextChange} required />
-                </label>
-                <label htmlFor="user_password">
+                    <FormControl type="email" id="user_email" name="user_name" placeholder="username" maxLength={40} onChange={handleTextChange} required />
+                </FormLabel>
+                <br />
+                <FormLabel>
                     Password
-                    <input type="text" id="user_password" name="user_password" placeholder="Password" maxLength={40} onChange={handleTextChange} required />
-                </label>
-            </div>
-            <button type="submit">Log in</button>
-            <button onClick={handleCreateAccount}>Create Account</button>
-        </form>
+                    <FormControl type="text" id="user_password" name="user_password" placeholder="Password" maxLength={40} onChange={handleTextChange} required />
+                </FormLabel>
+                <br />
+                <Button type="submit">Log in</Button>
+                <Button onClick={handleCreateAccount}>Create Account</Button>
+            </Form>
+        </div>
     )
 }

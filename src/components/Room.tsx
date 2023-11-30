@@ -19,8 +19,9 @@ export default function Room({item}:{item:roomListInterface}){
 
     return(
         <>
-            <ListGroup.Item key={item.room_id}>
+            <ListGroup.Item key={item.room_id} className="list-wrapper">
                 {item.room_name}
+                <br />
                 <Button onClick={handleJoinRoom}>Join</Button>
             </ListGroup.Item>
         </>

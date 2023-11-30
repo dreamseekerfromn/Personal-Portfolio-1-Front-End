@@ -23,9 +23,9 @@ export default function RoomList(){
 
     return(
         <>
-            <NewRoomForm />
-            
-            <div>
+
+            <div className="wrapper">
+                <NewRoomForm />
                 <ListGroup>
                     {rooms.map((elem) => <Room item={elem} />)}
                 </ListGroup>

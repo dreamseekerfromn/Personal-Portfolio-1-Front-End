@@ -3,6 +3,7 @@
 import { useParams } from "react-router-dom";
 import { IMessage } from "../interfaces/interface";
 import { useAuth } from "./Auth";
+import { Button, Form } from "react-bootstrap";
 //import axios from "axios";
 
 /**
@@ -42,13 +43,11 @@ export default function ChatForm({sendMessage, setSendMessage, socket}:{sendMess
     };
 
     return(
-        <form>
-            <div className="grid">
-                <label htmlFor="message">
-                    <textarea id="message" name="message" placeholder="Message" maxLength={256} onChange={handleTextChange} required />
-                </label>
-            </div>
-            <button onClick={submitSendMessage}>Send</button>
-        </form>
+        <Form>
+            <Form.Label>
+                <Form.Control as="textarea" rows={3} id="message" name="message" placeholder="Message" maxLength={256} onChange={handleTextChange} required />
+            </Form.Label>
+            <Button onClick={submitSendMessage}>Send</Button>
+        </Form>
     )
 }

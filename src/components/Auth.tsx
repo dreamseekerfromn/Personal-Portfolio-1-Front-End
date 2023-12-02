@@ -1,7 +1,5 @@
 import { createContext, useContext, useState } from "react";
 import { userinfoInterface } from "../interfaces/interface";
-//import { useNavigate } from "react-router-dom";
-//import { socket } from "../api/socket";
 import { postAuth } from "../api/axios";
 import { useNavigate } from "react-router-dom";
 
@@ -34,6 +32,9 @@ const authContextInitial = {
 export const AuthContext = createContext<authContextProp>(authContextInitial);
 
 /**
+ * AuthProvider()
+ * ================================================
+ * A component to handle the context hook for authentication
  * 
  * @param props {React.PropsWithChildren} - 
  * @returns {ReactComponentElement}

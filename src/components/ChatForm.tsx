@@ -1,14 +1,12 @@
-//import { useCallback } from "react";
-//import { Socket } from "socket.io-client";
 import { useParams } from "react-router-dom";
 import { IMessage } from "../interfaces/interface";
 import { useAuth } from "./Auth";
 import { Button, Form } from "react-bootstrap";
-//import axios from "axios";
 
 /**
  * LoginForm()
  * ===============================
+ * A component to render message form in the ChatPage()
  * 
  */
 export default function ChatForm({sendMessage, setSendMessage, socket}:{sendMessage:string, setSendMessage: any, socket:any}){
